@@ -26,7 +26,7 @@ class MessageModel(BaseModel):
     new_user_message : str
 
 
-@app.get("/get_whybuilder_message")
+@app.post("/get_whybuilder_message")
 def modifyLink(model: MessageModel)-> dict:
     '''클라이언트가 threadId와 유저프롬프트를 보내면 gpt프롬프트를 return 하는 함수 '''
     thread_id = model.thread_id
