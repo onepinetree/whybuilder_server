@@ -1,10 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 import uvicorn
 from pydantic import BaseModel
-import os
 from openai import OpenAI
 import time
 from api_info import API_KEY, whybuilder_assistant_id
+import asyncio
+import os
+from starlette import status
 
 app = FastAPI()
 client = OpenAI(api_key = API_KEY)
